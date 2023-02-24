@@ -185,6 +185,13 @@ class CT_R(BaseOxmlElement):
         self.append(fld_char)
         return fld_char
 
+    def add_instrText(self, instr_text_val):
+        instr_text = OxmlElement("w:instrText")
+        instr_text.text = instr_text_val
+        self.append(instr_text)
+
+        return instr_text
+
 
 class CT_Text(BaseOxmlElement):
     """
