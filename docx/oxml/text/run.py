@@ -194,6 +194,9 @@ class CT_R(BaseOxmlElement):
 
     @instr_text.setter
     def instr_text(self, instr_text_val):
+        if self.instr_text is not None:
+            self._remove_instr_text()
+
         instr_text = OxmlElement("w:instrText")
         instr_text.text = instr_text_val
         self.append(instr_text)
