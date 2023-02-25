@@ -198,6 +198,10 @@ class CT_R(BaseOxmlElement):
         instr_text.text = instr_text_val
         self.append(instr_text)
 
+    def _remove_instr_text(self):
+        for child in self.iterchildren("{*}instrText"):
+            self.remove(child)
+
 
 class CT_Text(BaseOxmlElement):
     """

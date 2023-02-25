@@ -268,12 +268,17 @@ class Run(Parented):
 
     @property
     def instr_text(self):
-
         return self._r.instr_text
 
     @instr_text.setter
     def instr_text(self, instr_text_val):
         self._r.instr_text = instr_text_val
+
+    def remove_instr_text(self):
+        if self.instr_text is None:
+            return None
+        else:
+            self._r._remove_instr_text()
 
 
 class _Text(object):
