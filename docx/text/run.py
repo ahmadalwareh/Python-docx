@@ -266,9 +266,14 @@ class Run(Parented):
         fldChar = self._r.add_fldChar(fldCharType, fldLock, dirty)
         return fldChar
 
-    def add_instrText(self, instr_text):
+    @property
+    def instr_text(self):
 
-        return self._r.add_instrText(instr_text)
+        return self._r.instr_text
+
+    @instr_text.setter
+    def instr_text(self, instr_text_val):
+        self._r.instr_text = instr_text_val
 
 
 class _Text(object):
